@@ -1,22 +1,25 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { userRoutes } from '../routes/UserRoutes';
 
 const HeaderServices = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="ban-short-links">
         <ul>
-          <li>
+          <li onClick={() => navigate(userRoutes.allCategory)}>
             <div>
               <img
-                src="././src/assets/images/icon/shop.png"
-                alt=""
+                src="./src/assets/images/icon/shop.png"
+                alt="All Services"
                 loading="lazy"
               />
               <h4>All Services</h4>
-              <a href="all-category.html" className="fclick" />
             </div>
           </li>
-          <li>
+
+          <li onClick={() => navigate(userRoutes.serviceExpert)}>
             <div>
               <img
                 src="./src/assets/images/icon/expert.png"
@@ -24,7 +27,6 @@ const HeaderServices = () => {
                 loading="lazy"
               />
               <h4>Experts</h4>
-              <a href="service-experts/index.html" className="fclick" />
             </div>
           </li>
           <li>

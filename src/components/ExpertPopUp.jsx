@@ -1,8 +1,23 @@
 import React from 'react'
 
-const whatServiceYouNeedPopup = () => {
+const ExpertPopUp = () => {
   return (
     <>
+      <div className="ani-quo">
+        <div className="ani-q1">
+          <h4>What you looking for?</h4>
+          <p>We connect you to service experts.</p>
+          <span>Get experts</span>
+        </div>
+        <div className="ani-q2">
+          <img src="././src/assets/images/quote.png" alt="" loading="lazy" />
+        </div>
+      </div>
+      {/* END */}
+      {/* START */}
+      <span className="btn-ser-need-ani">
+        <img src="././src/assets/images/icon/help.png" alt="" loading="lazy" />
+      </span>
       <div className="ani-quo-form">
         <i className="material-icons ani-req-clo">close</i>
         <div className="tit">
@@ -145,9 +160,9 @@ const whatServiceYouNeedPopup = () => {
             </button>
           </form>
         </div>
-      </div>
+      </div>{" "}
     </>
   );
 }
 
-export default whatServiceYouNeedPopup
+export default ExpertPopUp
