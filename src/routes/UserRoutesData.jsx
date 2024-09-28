@@ -6,6 +6,7 @@ import AllCategory from "../pages/AllCategory";
 import ServiceExpert from "../pages/ServiceExpert";
 import Jobs from "../pages/Jobs";
 import Travel from "../pages/Travel";
+import Products from "../pages/Products";
 
 const UserRoutesData = () => {
   return (
@@ -16,6 +17,7 @@ const UserRoutesData = () => {
         <Route path={userRoutes.serviceExpert} element={<ServiceExpert />} />
         <Route path={userRoutes.jobs} element={<Jobs />} />
         <Route path={userRoutes.travels} element={<Travel />} />
+        <Route path={userRoutes.products} element={<Products />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

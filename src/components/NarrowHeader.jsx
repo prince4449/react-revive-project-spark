@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from "react";
 const NarrowHeader = () => {
   return (
     <>
@@ -381,6 +380,6 @@ const NarrowHeader = () => {
       </div>
     </>
   );
-}
+};
 
-export default NarrowHeader
+export default NarrowHeader;

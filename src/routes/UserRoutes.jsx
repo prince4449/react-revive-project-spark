@@ -4,4 +4,5 @@ export const userRoutes = {
   serviceExpert: "/service-expert",
   jobs: "/jobs",
   travels: "/travels",
+  products: "/products",
 };

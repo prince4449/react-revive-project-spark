@@ -49,7 +49,7 @@ const HeaderServices = () => {
               <h4>Travel</h4>
             </div>
           </li>
-          <li>
+          {/* <li>
             <div>
               <img
                 src="././src/assets/images/icon/news.png"
@@ -70,8 +70,8 @@ const HeaderServices = () => {
               <h4>Events</h4>
               <a href="events.html" className="fclick" />
             </div>
-          </li>
-          <li>
+          </li> */}
+          <li onClick={() => navigate(userRoutes.products)}>
             <div>
               <img
                 src="././src/assets/images/icon/cart.png"
@@ -79,10 +79,9 @@ const HeaderServices = () => {
                 loading="lazy"
               />
               <h4>Products</h4>
-              <a href="products.html" className="fclick" />
             </div>
           </li>
-          <li>
+          {/* <li>
             <div>
               <img
                 src="./src/assets/images/icon/coupons.png"
@@ -103,7 +102,7 @@ const HeaderServices = () => {
               <h4>Blogs</h4>
               <a href="blog-posts.html" className="fclick" />
             </div>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>
