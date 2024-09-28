@@ -29,7 +29,7 @@ const HeaderServices = () => {
               <h4>Experts</h4>
             </div>
           </li>
-          <li>
+          <li onClick={() => navigate(userRoutes.jobs)}>
             <div>
               <img
                 src="./src/assets/images/icon/employee.png"
@@ -37,10 +37,9 @@ const HeaderServices = () => {
                 loading="lazy"
               />
               <h4>Jobs</h4>
-              <a href="jobs/index.html" className="fclick" />
             </div>
           </li>
-          <li>
+          <li onClick={() => navigate(userRoutes.travels)}>
             <div>
               <img
                 src="./src/assets/images/places/icons/hot-air-balloon.png"
@@ -48,7 +47,6 @@ const HeaderServices = () => {
                 loading="lazy"
               />
               <h4>Travel</h4>
-              <a href="places/index.html" className="fclick" />
             </div>
           </li>
           <li>
