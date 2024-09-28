@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const ExpertPopUp = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen);
+    if (!isFormOpen) {
+      document.querySelector(".ani-quo-form").classList.add("ani-quo-form-act");
+    } else {
+      document
+        .querySelector(".ani-quo-form")
+        .classList.remove("ani-quo-form-act");
+    }
+  };
+
+  const closeForm = () => {
+    setIsFormOpen(false);
+    document
+      .querySelector(".ani-quo-form")
+      .classList.remove("ani-quo-form-act");
+  };
+
   return (
     <>
-      <div className="ani-quo">
+      <div className="ani-quo" onClick={toggleForm}>
         <div className="ani-q1">
-          <h4>What you looking for?</h4>
+          <h4>What are you looking for?</h4>
           <p>We connect you to service experts.</p>
           <span>Get experts</span>
         </div>
@@ -13,13 +33,17 @@ const ExpertPopUp = () => {
           <img src="././src/assets/images/quote.png" alt="" loading="lazy" />
         </div>
       </div>
-      {/* END */}
-      {/* START */}
-      <span className="btn-ser-need-ani">
+
+      {/* START help button */}
+      <span className="btn-ser-need-ani" onClick={toggleForm}>
         <img src="././src/assets/images/icon/help.png" alt="" loading="lazy" />
       </span>
-      <div className="ani-quo-form">
-        <i className="material-icons ani-req-clo">close</i>
+
+      {/* ANIMATION QUOTE FORM */}
+      <div className={`ani-quo-form ${isFormOpen ? "ani-quo-form-act" : ""}`}>
+        <i className="material-icons ani-req-clo" onClick={closeForm}>
+          close
+        </i>
         <div className="tit">
           <h3>
             What service do you need? <span>BizBook will help you</span>
@@ -45,7 +69,7 @@ const ExpertPopUp = () => {
             className="log"
             style={{ display: "none" }}
           >
-            <p>You cannot make enquiry on your own listing!!</p>
+            <p>You cannot make an enquiry on your own listing!!</p>
           </div>
           <form
             name="home_slide_enquiry_form"
@@ -58,39 +82,34 @@ const ExpertPopUp = () => {
               className="form-control"
               name="listing_id"
               defaultValue={0}
-              placeholder=""
-              required=""
+              required
             />
             <input
               type="hidden"
               className="form-control"
               name="listing_user_id"
               defaultValue={0}
-              placeholder=""
-              required=""
+              required
             />
             <input
               type="hidden"
               className="form-control"
               name="enquiry_sender_id"
               defaultValue=""
-              placeholder=""
-              required=""
+              required
             />
             <input
               type="hidden"
               className="form-control"
               name="enquiry_source"
               defaultValue="Website"
-              placeholder=""
-              required=""
+              required
             />
             <div className="form-group">
               <input
                 type="text"
                 name="enquiry_name"
-                defaultValue=""
-                required="required"
+                required
                 className="form-control"
                 placeholder="Enter name*"
               />
@@ -100,8 +119,7 @@ const ExpertPopUp = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter email*"
-                required="required"
-                defaultValue=""
+                required
                 name="enquiry_email"
                 pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
                 title="Invalid email address"
@@ -111,12 +129,11 @@ const ExpertPopUp = () => {
               <input
                 type="text"
                 className="form-control"
-                defaultValue=""
                 name="enquiry_mobile"
                 placeholder="Enter mobile number *"
                 pattern="[7-9]{1}[0-9]{9}"
-                title="Phone number starting with 7-9 and remaining 9 digit with 0-9"
-                required=""
+                title="Phone number starting with 7-9 and remaining 9 digits with 0-9"
+                required
               />
             </div>
             <div className="form-group">
@@ -124,6 +141,7 @@ const ExpertPopUp = () => {
                 name="enquiry_category"
                 id="enquiry_category"
                 className="form-control chosen-select"
+                required
               >
                 <option value="">Select Category</option>
                 <option value={20}>Restaurants</option>
@@ -146,7 +164,7 @@ const ExpertPopUp = () => {
                 rows={3}
                 name="enquiry_message"
                 placeholder="Enter your query or message"
-                defaultValue={""}
+                defaultValue=""
               />
             </div>
             <input type="hidden" id="source" />
@@ -156,13 +174,13 @@ const ExpertPopUp = () => {
               name="home_slide_enquiry_submit"
               className="btn btn-primary"
             >
-              Submit Requirements{" "}
+              Submit Requirements
             </button>
           </form>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
-}
+};
 
-export default ExpertPopUp
+export default ExpertPopUp;

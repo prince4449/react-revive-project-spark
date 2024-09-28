@@ -1,46 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+
 const NarrowHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <div className="hom-top">
         <div className="container">
           <div className="row">
-            <div className="hom-nav ">
-              {/*MOBILE MENU*/}
+            <div className="hom-nav">
+              {/* MOBILE MENU */}
               <a href="index.html" className="top-log">
                 <img
-                  src="images/home/16077bizbook-white.png"
+                  src="././src/assets/images/home/16077bizbook-white.png"
                   style={{ width: 192, height: "auto" }}
                   alt=""
                   loading="lazy"
                   className="ic-logo"
                 />
               </a>
-              <div className="menu">
+              <div className="menu" onClick={toggleMenu}>
                 <h4>Explore</h4>
               </div>
-              <div className="pop-menu">
+              <div className={`pop-menu ${isMenuOpen ? "ani" : ""}`}>
                 <div className="container">
                   <div className="row">
-                    <i className="material-icons clopme">close</i>
+                    <i className="material-icons clopme" onClick={closeMenu}>
+                      close
+                    </i>
                     <div className="pmenu-spri">
                       <ul>
                         <li>
                           <a href="all-category.html" className="act">
-                            <img src="images/icon/shop.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/shop.png" loading="lazy" />
                             All Services{" "}
                           </a>
                         </li>
                         <li>
                           <a href="service-experts/index.html" className="act">
-                            <img src="images/icon/expert.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/expert.png" loading="lazy" />
                             Service Experts{" "}
                           </a>
                         </li>
                         <li>
                           <a href="jobs/index.html" className="act">
                             <img
-                              src="images/icon/employee.png"
+                              src="././src/assets/images/icon/employee.png"
                               loading="lazy"
                             />
                             Jobs{" "}
@@ -49,7 +62,7 @@ const NarrowHeader = () => {
                         <li>
                           <a href="places/index.html" className="act">
                             <img
-                              src="images/places/icons/hot-air-balloon.png"
+                              src="im././src/assets/ages/places/icons/hot-air-balloon.png"
                               loading="lazy"
                             />
                             Explore Travel{" "}
@@ -57,14 +70,14 @@ const NarrowHeader = () => {
                         </li>
                         <li>
                           <a href="news/index.html">
-                            <img src="images/icon/news.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/news.png" loading="lazy" />
                             News &amp; Magazines{" "}
                           </a>
                         </li>
                         <li>
                           <a href="events.html">
                             <img
-                              src="images/icon/calendar.png"
+                              src="././src/assets/images/icon/calendar.png"
                               loading="lazy"
                             />
                             Events{" "}
@@ -72,25 +85,25 @@ const NarrowHeader = () => {
                         </li>
                         <li>
                           <a href="products.html">
-                            <img src="images/icon/cart.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/cart.png" loading="lazy" />
                             Products{" "}
                           </a>
                         </li>
                         <li>
                           <a href="coupons.html">
-                            <img src="images/icon/coupons.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/coupons.png" loading="lazy" />
                             Coupon &amp; deals{" "}
                           </a>
                         </li>
                         <li>
                           <a href="blog-posts.html">
-                            <img src="images/icon/blog1.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/blog1.png" loading="lazy" />
                             Blogs{" "}
                           </a>
                         </li>
                         <li>
                           <a href="community.html">
-                            <img src="images/icon/11.png" loading="lazy" />
+                            <img src="././src/assets/images/icon/11.png" loading="lazy" />
                             Community{" "}
                           </a>
                         </li>
@@ -196,7 +209,7 @@ const NarrowHeader = () => {
                   </div>
                 </div>
               </div>
-              {/*END MOBILE MENU*/}
+              {/* END MOBILE MENU */}
               <div className="top-ser">
                 <form
                   name="filter_form"
@@ -305,13 +318,13 @@ const NarrowHeader = () => {
                   <a href="login.html?login=register">Create an account</a>
                 </li>
               </ul>
-              {/*MOBILE MENU*/}
+              {/* MOBILE MENU */}
               <div className="mob-menu">
                 <div className="mob-me-ic">
                   <i className="material-icons">menu</i>
                 </div>
                 <div className="mob-me-all">
-                  <div className="mob-me-clo">
+                  <div className="mob-me-clo" onClick={closeMenu}>
                     <i className="material-icons">close</i>
                   </div>
                   <div className="mv-bus">
@@ -334,46 +347,46 @@ const NarrowHeader = () => {
                     <h4>All Categories</h4>
                     <ul>
                       <li>
-                        <a href="all-listing.html">Spa and Facial</a>
+                        <a href="all-category.html">Spa and Facial</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Wedding halls</a>
+                        <a href="all-category.html">Wedding Halls</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Automobiles</a>
+                        <a href="all-category.html">Automobiles</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Restaurants</a>
+                        <a href="all-category.html">Restaurants</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Technology</a>
+                        <a href="all-category.html">Technology</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Pet shop</a>
+                        <a href="all-category.html">Pet Shop</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Real Estate</a>
+                        <a href="all-category.html">Real Estate</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Sports</a>
+                        <a href="all-category.html">Sports</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Hospitals</a>
+                        <a href="all-category.html">Hospitals</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Education</a>
+                        <a href="all-category.html">Education</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Transportation</a>
+                        <a href="all-category.html">Transportation</a>
                       </li>
                       <li>
-                        <a href="all-listing.html">Electricals</a>
+                        <a href="all-category.html">Electricals</a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              {/*END MOBILE MENU*/}
+              {/* END MOBILE MENU */}
             </div>
           </div>
         </div>

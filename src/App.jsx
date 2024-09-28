@@ -14,6 +14,41 @@ function ScrollToTop() {
 }
 
 function App() {
+  // useEffect(() => {
+  //   const scriptPaths = [
+  //     "/src/assets/js/jquery.min.js",
+  //     "/src/assets/js/popper.min.js",
+  //     "/src/assets/js/bootstrap.min.js",
+  //     "/src/assets/js/jquery-ui.js",
+  //     "/src/assets/js/select-opt.js",
+  //     "/src/assets/js/slick.js",
+  //     "/src/assets/js/custom.js",
+  //     "/src/assets/js/jquery.validate.min.js",
+  //   ];
+
+  //   scriptPaths.forEach((src) => {
+  //     const script = document.createElement("script");
+  //     script.src = src;
+  //     script.async = true;
+  //     script.onload = () => {
+  //       console.log(`${src} loaded`);
+  //       // If needed, call any initialization function after the script loads
+  //       if (src.includes("custom.js")) {
+  //         initCustomFunctionality(); // hypothetical function
+  //       }
+  //     };
+  //     document.body.appendChild(script);
+  //   });
+
+  //   return () => {
+  //     scriptPaths.forEach((src) => {
+  //       const existingScript = document.querySelector(`script[src="${src}"]`);
+  //       if (existingScript) {
+  //         existingScript.remove();
+  //       }
+  //     });
+  //   };
+  // }, []);
   return (
     <BrowserRouter>
       <Toaster
