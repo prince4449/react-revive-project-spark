@@ -5,4 +5,6 @@ export const userRoutes = {
   jobs: "/jobs",
   travels: "/travels",
   products: "/products",
+  categoryList: "/categoryList",
+  CategoryDetails: "/CategoryDetails",
 };

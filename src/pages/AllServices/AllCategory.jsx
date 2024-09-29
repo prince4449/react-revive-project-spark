@@ -1,12 +1,14 @@
 import React from "react";
-import Footer from "../components/Footer";
-import ListYourBusiness from "../components/ListYourBusiness";
-import NarrowHeader from "../components/NarrowHeader";
-import ExpertPopUp from "../components/ExpertPopUp";
-import { Categoryservices } from "../../StaticData";
+import Footer from "../../components/Footer";
+import ListYourBusiness from "../../components/ListYourBusiness";
+import NarrowHeader from "../../components/NarrowHeader";
+import ExpertPopUp from "../../components/ExpertPopUp";
+import { Categoryservices } from "../../../StaticData";
+import { userRoutes } from "../../routes/UserRoutes";
+import { useNavigate } from "react-router-dom";
 
 const AllCategory = () => {
-
+    const navigate = useNavigate();
 
   return (
     <>
@@ -46,7 +48,7 @@ const AllCategory = () => {
               <div className="sh-all-scat">
                 {Categoryservices.map((service, index) => (
                   <ul id="tail-re" key={index}>
-                    <li>
+                    <li onClick={()=>{navigate(userRoutes.categoryList)}}>
                       <div className="sh-all-scat-box">
                         <div className="lhs">
                           <img
@@ -57,7 +59,7 @@ const AllCategory = () => {
                         </div>
                         <div className="rhs">
                           <h4>
-                            <a href="all-listing.html">{service.title}</a>
+                            <a>{service.title}</a>
                             <span>
                               {service.count.toString().padStart(2, "0")}
                             </span>
@@ -66,7 +68,7 @@ const AllCategory = () => {
                             {service.subcategories.map(
                               (subcategory, subIndex) => (
                                 <li key={subIndex}>
-                                  <a href={subcategory.link}>
+                                  <a>
                                     {subcategory.name}{" "}
                                     <span>
                                       {subcategory.count
