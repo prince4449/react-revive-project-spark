@@ -1,10 +1,13 @@
 import React from 'react'
-import ListYourBusiness from './../components/ListYourBusiness';
-import ExpertPopUp from './../components/ExpertPopUp';
-import Footer from './../components/Footer';
-import NarrowHeader from './../components/NarrowHeader';
+import ListYourBusiness from './../../components/ListYourBusiness';
+import ExpertPopUp from './../../components/ExpertPopUp';
+import Footer from './../../components/Footer';
+import NarrowHeader from './../../components/NarrowHeader';
+import { useNavigate } from 'react-router-dom';
+import { userRoutes } from '../../routes/UserRoutes';
 
 const Products = () => {
+  const navigate = useNavigate();
 
      const product = [
        {
@@ -759,7 +762,13 @@ const Products = () => {
                 <div className="all-list-sh all-product-total">
                   <ul className="products-wrapper">
                     {product.map((product, index) => (
-                      <li className="products-item" key={index}>
+                      <li
+                        className="products-item"
+                        key={index}
+                        onClick={() => {
+                          navigate(userRoutes.productsDetails);
+                        }}
+                      >
                         <div className="all-pro-box">
                           <div className="all-pro-img">
                             <img
@@ -774,11 +783,7 @@ const Products = () => {
                                 alt=""
                                 loading="lazy"
                               />
-                              <a
-                                target="_blank"
-                                href={product.profileLink}
-                                className="fclick"
-                              />
+                              <a target="_blank" className="fclick" />
                             </div>
                           </div>
                           <div className="all-pro-txt">
@@ -789,7 +794,6 @@ const Products = () => {
                             </span>
                             <div className="links">
                               <a
-                                href="#"
                                 data-toggle="modal"
                                 data-target="#product-pop-qet"
                               >
@@ -798,7 +802,6 @@ const Products = () => {
                             </div>
                           </div>
                           <a
-                            href={product.productLink}
                             className="pro-view-full"
                           />
                         </div>

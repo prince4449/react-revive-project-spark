@@ -1,6 +1,10 @@
 import React from "react";
+import { userRoutes } from "../routes/UserRoutes";
+import { useNavigate } from "react-router-dom";
 
 const TrendingJobs = () => {
+        const navigate = useNavigate();
+
   const jobs = [
     {
       img: "images/1.png",
@@ -57,7 +61,12 @@ const TrendingJobs = () => {
             <div className="job-tre">
               <ul>
                 {jobs.map((job, index) => (
-                  <li key={index}>
+                  <li
+                    key={index}
+                    onClick={() => {
+                      navigate(userRoutes.jobDetails);
+                    }}
+                  >
                     <div className="inn">
                       <div className="jbtre-img">
                         <div className="jbtre-img1">
@@ -85,7 +94,7 @@ const TrendingJobs = () => {
                         <span className="job-box-cta">Apply now</span>
                         <span>More details</span>
                       </div>
-                      <a href={job.link} className="job-full-cta"></a>
+                      <a className="job-full-cta"></a>
                     </div>
                   </li>
                 ))}

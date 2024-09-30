@@ -1,6 +1,10 @@
 import React from "react";
+import { userRoutes } from "../routes/UserRoutes";
+import { useNavigate } from "react-router-dom";
 
 const PremiumJob = () => {
+      const navigate = useNavigate();
+
   const jobs = [
     {
       img: "images/1.png",
@@ -66,7 +70,7 @@ const PremiumJob = () => {
             <div className="hom2-cus-sli job-list">
               <ul className="multiple-items1">
                 {jobs.map((job, index) => (
-                  <li key={index}>
+                  <li key={index} onClick={()=>{navigate(userRoutes.jobDetails)}}>
                     <div className="job-box">
                       <div className="job-box-img">
                         <img src={job.img} alt="" loading="lazy" />
@@ -84,7 +88,7 @@ const PremiumJob = () => {
                       <div className="job-box-apl">
                         <span className="job-box-cta">Apply now</span>
                       </div>
-                      <a href={job.link} className="job-full-cta"></a>
+                      <a className="job-full-cta"></a>
                     </div>
                   </li>
                 ))}

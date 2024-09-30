@@ -7,4 +7,9 @@ export const userRoutes = {
   products: "/products",
   categoryList: "/categoryList",
   CategoryDetails: "/CategoryDetails",
+  expertList: "/expertList",
+  expertProfile: "/expertProfile",
+  allJobs: "/allJobs",
+  jobDetails: "/jobDetails",
+  productsDetails: "/productsDetails",
 };

@@ -1,13 +1,16 @@
 import React from "react";
-import HowItsWork from "../components/HowItsWork";
-import ExpertPopUp from "../components/ExpertPopUp";
-import ListYourBusiness from "../components/ListYourBusiness";
-import Footer from "../components/Footer";
-import NarrowHeader from "../components/NarrowHeader";
-import JoinUs from "../components/JoinUs";
-import { reviews, services } from "../../StaticData";
+import ExpertPopUp from "../../components/ExpertPopUp";
+import ListYourBusiness from "../../components/ListYourBusiness";
+import Footer from "../../components/Footer";
+import NarrowHeader from "../../components/NarrowHeader";
+import JoinUs from "../../components/JoinUs";
+import { reviews, services } from "../../../StaticData";
+import HowItsWork from "../../components/HowItsWork";
+import { useNavigate } from "react-router-dom";
+import { userRoutes } from "../../routes/UserRoutes";
 
 const ServiceExpert = () => {
+    const navigate = useNavigate();
 
 
   return (
@@ -122,7 +125,7 @@ const ServiceExpert = () => {
               <div className="land-pack">
                 <ul>
                   {services.map((service, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={()=>{navigate(userRoutes.expertList)}}>
                       <div className="land-pack-grid">
                         <div className="land-pack-grid-img">
                           <img
@@ -139,7 +142,7 @@ const ServiceExpert = () => {
                             </span>
                           </h4>
                         </div>
-                        <a href={service.link} className="land-pack-grid-btn">
+                        <a className="land-pack-grid-btn">
                           View all experts
                         </a>
                       </div>

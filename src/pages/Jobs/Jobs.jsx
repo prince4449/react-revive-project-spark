@@ -1,13 +1,13 @@
 import React from "react";
-import HowItsWork from "./../components/HowItsWork";
-import ExpertPopUp from "./../components/ExpertPopUp";
-import ListYourBusiness from "./../components/ListYourBusiness";
-import Footer from "./../components/Footer";
-import PremiumJob from "../components/PremiumJob";
-import JoinUs from "./../components/JoinUs";
-import TrendingJobs from "../components/TrendingJobs";
-import NarrowHeader from "./../components/NarrowHeader";
-import PopularJobCategory from "./../components/PopularJobCategory";
+import HowItsWork from "./../../components/HowItsWork";
+import ExpertPopUp from "./../../components/ExpertPopUp";
+import ListYourBusiness from "./../../components/ListYourBusiness";
+import Footer from "./../../components/Footer";
+import PremiumJob from "../../components/PremiumJob";
+import JoinUs from "./../../components/JoinUs";
+import TrendingJobs from "../../components/TrendingJobs";
+import NarrowHeader from "./../../components/NarrowHeader";
+import PopularJobCategory from "./../../components/PopularJobCategory";
 const Jobs = () => {
   return (
     <>
