@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import ListYourBusiness from "../../components/ListYourBusiness";
 import NarrowHeader from "../../components/NarrowHeader";
@@ -6,9 +6,28 @@ import ExpertPopUp from "../../components/ExpertPopUp";
 import { Categoryservices } from "../../../StaticData";
 import { userRoutes } from "../../routes/UserRoutes";
 import { useNavigate } from "react-router-dom";
+import { Get } from "../../Api/api";
+import { URL_CONSTANTS } from "../../Api/ApiUrl";
 
 const AllCategory = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+    const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await Get(URL_CONSTANTS.getAllCategory);
+      console.log("response", response);
+      if (response.data?.length > 0) {
+        setCategories(response.data);
+      }
+    } catch (error) {
+      console.error("Error ", error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
   return (
     <>
@@ -46,34 +65,38 @@ const AllCategory = () => {
           <div className="container">
             <div className="row">
               <div className="sh-all-scat">
-                {Categoryservices.map((service, index) => (
+                {categories.map((service, index) => (
                   <ul id="tail-re" key={index}>
-                    <li onClick={()=>{navigate(userRoutes.categoryList)}}>
+                    <li
+                      onClick={() => {
+                        navigate(`${userRoutes.categoryList}?id=${service.id}`);
+                      }}
+                    >
                       <div className="sh-all-scat-box">
                         <div className="lhs">
                           <img
-                            src={service.image}
-                            alt={service.title}
+                            src={service?.image}
+                            alt={service?.name}
                             loading="lazy"
                           />
                         </div>
                         <div className="rhs">
                           <h4>
-                            <a>{service.title}</a>
+                            <a>{service?.name}</a>
                             <span>
-                              {service.count.toString().padStart(2, "0")}
+                              {service?.cards_count.toString().padStart(2, "0")}
                             </span>
                           </h4>
                           <ol>
-                            {service.subcategories.map(
+                            {service?.business_sub_categories.map(
                               (subcategory, subIndex) => (
                                 <li key={subIndex}>
                                   <a>
-                                    {subcategory.name}{" "}
+                                    {subcategory?.name}{" "}
                                     <span>
-                                      {subcategory.count
+                                      {/* {subcategory?.count
                                         .toString()
-                                        .padStart(2, "0")}
+                                        .padStart(2, "0") || 20} */}
                                     </span>
                                   </a>
                                 </li>

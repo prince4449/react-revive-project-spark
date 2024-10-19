@@ -1,8 +1,8 @@
-import React from 'react'
-import ListYourBusiness from './../../components/ListYourBusiness';
-import ExpertPopUp from './../../components/ExpertPopUp';
-import Footer from './../../components/Footer';
-import NarrowHeader from './../../components/NarrowHeader';
+import React from "react";
+import ListYourBusiness from "./../../components/ListYourBusiness";
+import ExpertPopUp from "./../../components/ExpertPopUp";
+import Footer from "./../../components/Footer";
+import NarrowHeader from "./../../components/NarrowHeader";
 
 const ProductsDetails = () => {
   return (
@@ -10,7 +10,7 @@ const ProductsDetails = () => {
       <section>
         <div className="str ind2-home">
           <div>
-    <NarrowHeader/>
+            <NarrowHeader />
           </div>
         </div>
       </section>
@@ -260,9 +260,9 @@ const ProductsDetails = () => {
           </div>
         </div>
       </section>
-<ListYourBusiness/>
-<ExpertPopUp/>
-<Footer />   
+      <ListYourBusiness />
+      <ExpertPopUp />
+      <Footer />
       {/* SHARE POPUP */}
       <div className="modal fade sharepop" id="sharepop">
         <div className="modal-dialog modal-sm">
@@ -291,6 +291,6 @@ const ProductsDetails = () => {
       </div>
     </>
   );
-}
+};
 
-export default ProductsDetails
+export default ProductsDetails;

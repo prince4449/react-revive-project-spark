@@ -1,66 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ListYourBusiness from '../../components/ListYourBusiness';
 import Footer from '../../components/Footer';
 import ExpertPopUp from '../../components/ExpertPopUp';
 import NarrowHeader from '../../components/NarrowHeader';
 import { userRoutes } from '../../routes/UserRoutes';
 import { useNavigate } from 'react-router-dom';
+import { URL_CONSTANTS } from '../../Api/ApiUrl';
+import { Get } from '../../Api/api';
 
 const CategoryListing = () => {
-      const navigate = useNavigate();
 
-    const listings = [
-      {
-        id: 388,
-        name: "Mia Skin Care",
-        image: "images/listings/37577pexels-karolina-grabowska-5240337.jpg",
-        address: "No:2, 4th Avenue, Newyork, USA, Near to Airport",
-        phone: "876587675",
-        email: "johnitsmes@gmail.com",
-        whatsapp: "987654621",
-        isOpen: true,
-      },
-      {
-        id: 387,
-        name: "Honey 2 Massage Center",
-        image: "images/listings/87817pexels-photo-9335961.jpeg",
-        address: "No:2, 4th Avenue, Newyork, USA, Near to Airport",
-        phone: "876587675",
-        email: "johnitsmes@gmail.com",
-        whatsapp: "987654621",
-        isOpen: true,
-      },
-      {
-        id: 386,
-        name: "Sophia Massage Center In Chicago",
-        image: "images/listings/42814pexels-roman-odintsov-5912192.jpg",
-        address: "No:2, 4th Avenue, Newyork, USA, Near to Airport",
-        phone: "876587675",
-        email: "johnitsmes@gmail.com",
-        whatsapp: "987654621",
-        isOpen: true,
-      },
-      {
-        id: 385,
-        name: "Olivia Facials",
-        image: "images/listings/69656woman-girl-beauty-mask.jpg",
-        address: "No:2, 4th Avenue, Newyork, USA, Near to Airport",
-        phone: "876587675",
-        email: "johnitsmes@gmail.com",
-        whatsapp: "987654621",
-        isOpen: true,
-      },
-      {
-        id: 384,
-        name: "Anna Spa & Massage",
-        image: "images/listings/26574pexels-photo-3997981.jpeg",
-        address: "No:2, 4th Avenue, Newyork, USA, Near to Airport",
-        phone: "876587675",
-        email: "johnitsmes@gmail.com",
-        whatsapp: "987654621",
-        isOpen: true,
-      },
-    ];
+      const navigate = useNavigate();
+    const [categories, setCategories] = useState([]);
+
+    const fetchCategories = async (id) => {
+      try {
+        const response = await Get(URL_CONSTANTS.getListForOneCategory(id));
+        if (response.data?.length > 0) {
+          setCategories(response.data);
+        }
+      } catch (error) {
+        console.error("Error ", error.message);
+      }
+    };
+
+    useEffect(() => {
+          const searchParams = new URLSearchParams(location.search);
+          const id = searchParams.get("id");
+      fetchCategories(id);
+    }, []);
+
+
   return (
     <>
       {/* START */}
@@ -841,9 +811,16 @@ const CategoryListing = () => {
                 {/* Loader Image */}
                 <div className="all-list-sh all-listing-total">
                   <ul className="all-list-wrapper">
-                    {listings.map((listing) => (
+                    {categories.map((listing) => (
                       <li key={listing.id} className="all-list-item">
-                        <div className="eve-box" onClick={()=>{navigate(userRoutes.CategoryDetails);}}>
+                        <div
+                          className="eve-box"
+                          onClick={() => {
+                            navigate(
+                              `${userRoutes.CategoryDetails}?id=${listing.id}`
+                            );
+                          }}
+                        >
                           {/* LISTING IMAGE */}
                           <div className="al-img">
                             <span className="open-stat">
@@ -874,7 +851,7 @@ const CategoryListing = () => {
                               <span>No Reviews Yet</span>
                             </div>
                             <span className="addr">{listing.address}</span>
-                            <span className="pho">{listing.phone}</span>
+                            <span className="pho">{listing.mobile}</span>
                             <span className="mail">{listing.email}</span>
                             <div className="links">
                               <a href="login?src=all-listing.html">Get quote</a>

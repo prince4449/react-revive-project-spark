@@ -1,16 +1,35 @@
-import React from 'react'
-import ListYourBusiness from '../../components/ListYourBusiness';
-import ExpertPopUp from '../../components/ExpertPopUp';
-import Footer from '../../components/Footer';
-import NarrowHeader from '../../components/NarrowHeader';
+import React, { useEffect, useState } from "react";
+import ListYourBusiness from "../../components/ListYourBusiness";
+import ExpertPopUp from "../../components/ExpertPopUp";
+import Footer from "../../components/Footer";
+import NarrowHeader from "../../components/NarrowHeader";
+import { URL_CONSTANTS } from "../../Api/ApiUrl";
+import { Get } from "../../Api/api";
 
 const CategoryDetails = () => {
+  const [categoriesDetails, setCategoriesDetails] = useState([]);
+
+  const fetchCategoriesDetails = async (id) => {
+    try {
+      const response = await Get(URL_CONSTANTS.getCategoryDetails(id));
+      setCategoriesDetails(response.data);
+    } catch (error) {
+      console.error("Error ", error.message);
+    }
+  };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get("id");
+    fetchCategoriesDetails(id);
+  }, []);
+
   return (
     <>
       <section>
         <div className="str ind2-home">
           <div>
- <NarrowHeader/>
+            <NarrowHeader />
           </div>
         </div>
       </section>
@@ -78,7 +97,7 @@ const CategoryDetails = () => {
                   />
                 </div>
                 <div className="list-fix-tit">
-                  <h3>Greys Sloan Memorial Hospital</h3>
+                  <h3>{categoriesDetails.name}</h3>
                   <p>
                     <b>Address:</b> No:2, 4th Avenue, Newyork, USA, Near to
                     Airport
@@ -127,7 +146,7 @@ const CategoryDetails = () => {
                 </span>
               </div>
               <div className="pg-list-1-left">
-                <h3>Greys Sloan Memorial Hospital</h3>
+                <h3>{categoriesDetails.name}</h3>
                 <div className="list-rat-all">
                   <b>5.0</b>
                   <label className="rat">
@@ -145,11 +164,11 @@ const CategoryDetails = () => {
                 </p>
                 <div className="list-number pag-p1-phone">
                   <ul>
-                    <a href="tel:876587675">
-                      <li className="ic-php">876587675 </li>
+                    <a href={`tel: ${categoriesDetails.mobile}`}>
+                      <li className="ic-php">{categoriesDetails.mobile} </li>
                     </a>
-                    <a href="mailto:johnitsmes@gmail.com">
-                      <li className="ic-mai">johnitsmes@gmail.com </li>
+                    <a href={`mailto: ${categoriesDetails.email}`}>
+                      <li className="ic-mai">{categoriesDetails.email}</li>
                     </a>
                     <a target="_blank" href="http://www.Greys .com">
                       <li className="ic-web">www.Greys .com</li>
@@ -160,7 +179,10 @@ const CategoryDetails = () => {
               <div className="list-ban-btn">
                 <ul>
                   <li>
-                    <a href="tel:876587675" className="cta cta-call">
+                    <a
+                      href={`tel: ${categoriesDetails.mobile}`}
+                      className="cta cta-call"
+                    >
                       Call Now
                     </a>
                   </li>
@@ -1284,9 +1306,9 @@ const CategoryDetails = () => {
           </form>
         </div>
       </div>
-<ListYourBusiness/>
-<ExpertPopUp/>
-<Footer/>
+      <ListYourBusiness />
+      <ExpertPopUp />
+      <Footer />
 
       {/* SHARE POPUP */}
       <div className="modal fade sharepop" id="sharepop">
@@ -1316,6 +1338,6 @@ const CategoryDetails = () => {
       </div>
     </>
   );
-}
+};
 
-export default CategoryDetails
+export default CategoryDetails;
