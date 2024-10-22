@@ -1,35 +1,134 @@
-import React, { useEffect, useState } from 'react'
-import ListYourBusiness from '../../components/ListYourBusiness';
-import Footer from '../../components/Footer';
-import ExpertPopUp from '../../components/ExpertPopUp';
-import NarrowHeader from '../../components/NarrowHeader';
-import { userRoutes } from '../../routes/UserRoutes';
-import { useNavigate } from 'react-router-dom';
-import { URL_CONSTANTS } from '../../Api/ApiUrl';
-import { Get } from '../../Api/api';
+import React, { useEffect, useState } from "react";
+import ListYourBusiness from "../../components/ListYourBusiness";
+import Footer from "../../components/Footer";
+import ExpertPopUp from "../../components/ExpertPopUp";
+import NarrowHeader from "../../components/NarrowHeader";
+import { userRoutes } from "../../routes/UserRoutes";
+import { useNavigate } from "react-router-dom";
+import { URL_CONSTANTS } from "../../Api/ApiUrl";
+import { Get } from "../../Api/api";
+import Dropdown from "../../components/Fields/Dropdown";
+import DropdownSearch from "../../components/Fields/DropdownSearch";
 
 const CategoryListing = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+  const [allCategories, setAllCategories] = useState([]);
+  const [allSubCategories, setAllSubCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedSubcategory, setSelectedSubcategory] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [searchCity, setSearchCity] = useState("");
+  const [selectedValues, setSelectedValues] = useState([]);
+  const [allCity, setallCity] = useState([]);
 
-      const navigate = useNavigate();
-    const [categories, setCategories] = useState([]);
+  const handleCheckboxClick = (e) => {
+    const { id, checked } = e.target;
 
-    const fetchCategories = async (id) => {
-      try {
-        const response = await Get(URL_CONSTANTS.getListForOneCategory(id));
-        if (response.data?.length > 0) {
-          setCategories(response.data);
-        }
-      } catch (error) {
-        console.error("Error ", error.message);
+    setSelectedValues((prevValues) => {
+      const updatedValues = checked
+        ? [...prevValues, id] // Add the id if checked
+        : prevValues.filter((value) => value !== id); // Remove the id if unchecked
+
+      const selectedValuesString = updatedValues.join(","); // Join the updated values
+      fetchAllBusinessCard("", selectedValuesString, ""); // Use the updated string in API call
+
+      return updatedValues; // Return the updated values to set in the state
+    });
+  };
+  const handleDropdownChange = (selectedOption) => {
+    console.log("Selected Option:", selectedOption);
+    setSelectedCity(selectedOption);
+    fetchAllBusinessCard("", "", selectedOption);
+    // Perform any action based on selected dropdown option
+  };
+
+  const handleSearchChange = (searchTerm) => {
+    if (searchTerm === undefined || searchTerm === "undefined") return;
+    getCity(searchTerm);
+    setSearchCity(searchTerm);
+    console.log("Search Term:", searchTerm);
+    // Call API or handle search logic based on the search term
+  };
+  // Convert selected values array to comma-separated string
+  const fetchAllCategories = async () => {
+    try {
+      const response = await Get(URL_CONSTANTS.getAllCategory);
+      console.log("response", response);
+      if (response.data?.length > 0) {
+        let dropdown = response.data.map((data) => {
+          return { label: data.name, value: data.id };
+        });
+        setAllCategories(dropdown);
       }
-    };
+    } catch (error) {
+      console.error("Error ", error.message);
+    }
+  };
 
-    useEffect(() => {
-          const searchParams = new URLSearchParams(location.search);
-          const id = searchParams.get("id");
-      fetchCategories(id);
-    }, []);
+  const fetchAllSubcategory = async (id) => {
+    try {
+      const response = await Get(URL_CONSTANTS.getAllSubcategory(id));
+      console.log("response", response);
+      if (response.data?.length > 0) {
+        let dropdown = response.data.map((data) => {
+          return { label: data.name, value: data.id };
+        });
+        setAllSubCategories(dropdown);
+      }
+    } catch (error) {
+      console.error("Error ", error.message);
+    }
+  };
+  const getCity = async (name) => {
+    if (!name) return;
+    try {
+      const response = await Get(URL_CONSTANTS.getDistt(name));
+      if (response.data?.length > 0) {
+        console.log(" response.data", response.data);
+        let dropdown = response.data.map((data) => {
+          return { label: data.dist_name, value: data.dist_id };
+        });
+        setallCity(dropdown);
+      }
+    } catch (error) {
+      console.error("Error ", error.message);
+    }
+  };
 
+  const fetchAllBusinessCard = async (value, selectedValuesString, city) => {
+    try {
+      const categoryId = value || selectedOption || ""; // Simplified fallback logic for category
+      const subcategoryIds = selectedValuesString || ""; // Simplified fallback for subcategories
+      const cityId =
+        city.value || (selectedValues.value ? selectedValues.value : ""); // Simplified fallback for city
+
+      const response = await Get(
+        URL_CONSTANTS.getListForOneCategory(categoryId, subcategoryIds, cityId)
+      );
+      setCategories(response.data);
+    } catch (error) {
+      console.error("Error fetching subcategories:", error.message);
+    }
+  };
+
+  console.log("allCategories", allSubCategories);
+  useEffect(() => {
+    fetchAllCategories();
+  }, []);
+  const handleChange = (event) => {
+    setSelectedValues([]);
+    setSelectedOption(event.target.value);
+    fetchAllBusinessCard(event.target.value, "", "");
+    fetchAllSubcategory(event.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get("id");
+    fetchAllBusinessCard(id, "", "");
+  }, []);
 
   return (
     <>
@@ -214,28 +313,13 @@ const CategoryListing = () => {
                   <div className="filt-com lhs-cate">
                     <h4>Categories</h4>
                     <div className="dropdown">
-                      <select
-                        onchange="SubcategoryFilter(this.value);"
-                        className="cat_check chosen-select"
-                        name="cat_check"
-                        id="cat_check"
-                      >
-                        <option value="">Select Category</option>
-                        <option selected="" value={15}>
-                          Spa and Facial
-                        </option>
-                        <option value={19}>Wedding halls</option>
-                        <option value={5}>Automobiles</option>
-                        <option value={20}>Restaurants</option>
-                        <option value={16}>Technology</option>
-                        <option value={17}>Pet shop</option>
-                        <option value={10}>Real Estate</option>
-                        <option value={8}>Sports</option>
-                        <option value={2}>Hospitals</option>
-                        <option value={7}>Education</option>
-                        <option value={3}>Transportation</option>
-                        <option value={6}>Electricals</option>
-                      </select>
+                      <Dropdown
+                        options={allCategories}
+                        value={selectedOption}
+                        onChange={handleChange}
+                        placeholder="Choose one"
+                        className="cat_check chosen-select" // Applying a custom class
+                      />
                     </div>
                   </div>
                   {/*END*/}
@@ -243,117 +327,27 @@ const CategoryListing = () => {
                   <div className="sub_cat_section filt-com lhs-sub">
                     <h4>Sub category</h4>
                     <ul>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={48}
-                            id="Health & Beauty"
-                          />
-                          <label htmlFor="Health & Beauty">
-                            Health &amp; Beauty
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={47}
-                            id="Health &Beauty"
-                          />
-                          <label htmlFor="Health &Beauty">
-                            Health &amp;Beauty
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={46}
-                            id="Hospitals& Diagnostic Supply"
-                          />
-                          <label htmlFor="Hospitals& Diagnostic Supply">
-                            Hospitals&amp; Diagnostic Supply
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={45}
-                            id="Gifts &Crafts"
-                          />
-                          <label htmlFor="Gifts &Crafts">
-                            Gifts &amp;Crafts
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={44}
-                            id="Gifts & Crafts"
-                          />
-                          <label htmlFor="Gifts & Crafts">
-                            Gifts &amp; Crafts
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={38}
-                            id="Face & Body"
-                          />
-                          <label htmlFor="Face & Body">Face &amp; Body</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={9}
-                            id="Massage"
-                          />
-                          <label htmlFor="Massage">Massage</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            className="sub_cat_check"
-                            name="sub_cat_check"
-                            defaultValue={8}
-                            id="Facial"
-                          />
-                          <label htmlFor="Facial">Facial</label>
-                        </div>
-                      </li>
+                      {allSubCategories.map((data) => {
+                        return (
+                          <li key={data.value}>
+                            <div className="chbox">
+                              <input
+                                type="checkbox"
+                                onClick={handleCheckboxClick}
+                                className="sub_cat_check"
+                                name="sub_cat_check"
+                                id={data.value} // Use data.value as ID
+                              />
+                              <label htmlFor={data.value}>{data.label}</label>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                   {/*END*/}
                   {/*START*/}
-                  <div className="filt-com lhs-featu">
+                  {/* <div className="filt-com lhs-featu">
                     <h4>Features</h4>
                     <ul>
                       <li>
@@ -443,29 +437,21 @@ const CategoryListing = () => {
                         </div>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                   {/*END*/}
                   {/*START*/}
                   <div className="filt-com lhs-cate">
                     <h4>Cities</h4>
                     <div className="dropdown">
-                      <select
-                        id="city_check"
-                        name="city_check"
-                        className="chosen-select"
-                      >
-                        <option value="">Select City</option>
-                        <option value={48025}>Los Angeles</option>
-                        <option value={48026}>Chicago</option>
-                        <option value={48027}>Houston</option>
-                        <option value={48028}>Phoenix</option>
-                        <option value={48024}>New York City</option>
-                        <option value={48029}>Philadelphia</option>
-                        <option value={48030}>San Antonio</option>
-                        <option value={48031}>San Diego</option>
-                        <option value={48032}>Dallas</option>
-                        <option value={48035}>Illunois city</option>
-                      </select>
+                      <DropdownSearch
+                        isSearchable
+                        options={allCity}
+                        value={selectedCity}
+                        onDropdownChange={handleDropdownChange} // Handle selection
+                        onSearchChange={handleSearchChange} // Handle search input
+                        placeholder="Select City"
+                        className="chosen-select" // Apply custom class
+                      />
                     </div>
                   </div>
                   {/*START*/}
@@ -1048,6 +1034,6 @@ const CategoryListing = () => {
       <Footer />
     </>
   );
-}
+};
 
-export default CategoryListing
+export default CategoryListing;
