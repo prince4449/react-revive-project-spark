@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userRoutes } from "../routes/UserRoutes";
+import { Get } from "../Api/api";
+import { URL_CONSTANTS } from "../Api/ApiUrl";
 
 const NarrowHeader = () => {
     const navigate = useNavigate();
-
+    const [categories, setCategories] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,6 +17,22 @@ const NarrowHeader = () => {
     setIsMenuOpen(false);
   };
 
+    const fetchCategories = async () => {
+      try {
+        const response = await Get(URL_CONSTANTS.getAllCategory);
+        console.log("response", response);
+        if (response.data?.length > 0) {
+          setCategories(response.data);
+        }
+      } catch (error) {
+        console.error("Error ", error.message);
+      }
+    };
+
+    useEffect(() => {
+      fetchCategories();
+    }, [isMenuOpen]);
+    console.log("categories", categories, isMenuOpen);
   return (
     <>
       <div className="hom-top">
@@ -22,7 +40,12 @@ const NarrowHeader = () => {
           <div className="row">
             <div className="hom-nav">
               {/* MOBILE MENU */}
-              <a className="top-log" onClick={()=>{navigate(userRoutes.home)}}>
+              <a
+                className="top-log"
+                onClick={() => {
+                  navigate(userRoutes.home);
+                }}
+              >
                 <img
                   src="/assets/images/home/16077bizbook-white.png"
                   style={{ width: 192, height: "auto" }}
@@ -42,20 +65,26 @@ const NarrowHeader = () => {
                     </i>
                     <div className="pmenu-spri">
                       <ul>
-                        <li>
-                          <a href="all-category.html" className="act">
-                            <img src="/assets/images/icon/shop.png" loading="lazy" />
+                        <li onClick={() => navigate(userRoutes.allCategory)}>
+                          <a className="act">
+                            <img
+                              src="/assets/images/icon/shop.png"
+                              loading="lazy"
+                            />
                             All Services{" "}
                           </a>
                         </li>
-                        <li>
-                          <a href="service-experts/index.html" className="act">
-                            <img src="/assets/images/icon/expert.png" loading="lazy" />
+                        <li onClick={() => navigate(userRoutes.serviceExpert)}>
+                          <a className="act">
+                            <img
+                              src="/assets/images/icon/expert.png"
+                              loading="lazy"
+                            />
                             Service Experts{" "}
                           </a>
                         </li>
-                        <li>
-                          <a href="jobs/index.html" className="act">
+                        <li onClick={() => navigate(userRoutes.jobs)}>
+                          <a className="act">
                             <img
                               src="/assets/images/icon/employee.png"
                               loading="lazy"
@@ -63,52 +92,23 @@ const NarrowHeader = () => {
                             Jobs{" "}
                           </a>
                         </li>
-                        <li>
-                          <a href="places/index.html" className="act">
+                        <li onClick={() => navigate(userRoutes.travels)}>
+                          <a className="act">
                             <img
-                              src="im/assets/ages/places/icons/hot-air-balloon.png"
+                              src="/assets/images/places/icons/hot-air-balloon.png"
                               loading="lazy"
                             />
                             Explore Travel{" "}
                           </a>
                         </li>
-                        <li>
-                          <a href="news/index.html">
-                            <img src="/assets/images/icon/news.png" loading="lazy" />
-                            News &amp; Magazines{" "}
-                          </a>
-                        </li>
-                        <li>
-                          <a href="events.html">
+
+                        <li onClick={() => navigate(userRoutes.products)}>
+                          <a>
                             <img
-                              src="/assets/images/icon/calendar.png"
+                              src="/assets/images/icon/cart.png"
                               loading="lazy"
                             />
-                            Events{" "}
-                          </a>
-                        </li>
-                        <li>
-                          <a href="products.html">
-                            <img src="/assets/images/icon/cart.png" loading="lazy" />
                             Products{" "}
-                          </a>
-                        </li>
-                        <li>
-                          <a href="coupons.html">
-                            <img src="/assets/images/icon/coupons.png" loading="lazy" />
-                            Coupon &amp; deals{" "}
-                          </a>
-                        </li>
-                        <li>
-                          <a href="blog-posts.html">
-                            <img src="/assets/images/icon/blog1.png" loading="lazy" />
-                            Blogs{" "}
-                          </a>
-                        </li>
-                        <li>
-                          <a href="community.html">
-                            <img src="/assets/images/icon/11.png" loading="lazy" />
-                            Community{" "}
                           </a>
                         </li>
                       </ul>
@@ -121,66 +121,25 @@ const NarrowHeader = () => {
                         placeholder="Search category"
                       />
                       <ul id="pg-resu">
-                        <li>
-                          <a href="all-listing.html">
-                            Spa and Facial -<span>05</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Wedding halls -<span>00</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Automobiles -<span>05</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Restaurants -<span>01</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Technology -<span>04</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Pet shop -<span>00</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Real Estate -<span>05</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Sports -<span>00</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Hospitals -<span>06</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Education -<span>06</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Transportation -<span>05</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="all-listing.html">
-                            Electricals -<span>04</span>
-                          </a>
-                        </li>
+                        {categories.map((service, index) => (
+                          <li
+                            onClick={() => {
+                              navigate(
+                                `${userRoutes.categoryList}?id=${service.id}`
+                              );
+                              toggleMenu();
+                            }}
+                          >
+                            <a>
+                              {service?.name} {" "}
+                              <span>
+                                {service?.cards_count
+                                  .toString()
+                                  .padStart(2, "0")}
+                              </span>
+                            </a>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     <div className="dir-home-nav-bot">
