@@ -10,7 +10,7 @@ const HighlightedCard = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/1.png"
+                    src="/assets/images/icon/1.png"
                     alt=""
                     loading="lazy"
                   />
@@ -25,7 +25,7 @@ const HighlightedCard = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/2.png"
+                    src="/assets/images/icon/2.png"
                     alt=""
                     loading="lazy"
                   />
@@ -40,7 +40,7 @@ const HighlightedCard = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/3.png"
+                    src="/assets/images/icon/3.png"
                     alt=""
                     loading="lazy"
                   />
@@ -55,7 +55,7 @@ const HighlightedCard = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/4.png"
+                    src="/assets/images/icon/4.png"
                     alt=""
                     loading="lazy"
                   />

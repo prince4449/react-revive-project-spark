@@ -11,7 +11,7 @@ const ExpertList = () => {
 
     const jobs = [
       {
-        imgSrc: "././src/assets/images/services/1.jpg",
+        imgSrc: "/assets/images/services/1.jpg",
         rating: 4.0,
         name: "Richflayer",
         servicesDone: 32,
@@ -20,7 +20,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/2.jpeg",
+        imgSrc: "/assets/images/services/2.jpeg",
         rating: 4.2,
         name: "David",
         servicesDone: 12,
@@ -29,7 +29,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/1.jpg",
+        imgSrc: "/assets/images/services/1.jpg",
         rating: 4.0,
         name: "Richflayer",
         servicesDone: 32,
@@ -38,7 +38,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/2.jpeg",
+        imgSrc: "/assets/images/services/2.jpeg",
         rating: 4.2,
         name: "David",
         servicesDone: 12,
@@ -47,7 +47,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/1.jpg",
+        imgSrc: "/assets/images/services/1.jpg",
         rating: 4.0,
         name: "Richflayer",
         servicesDone: 32,
@@ -56,7 +56,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/2.jpeg",
+        imgSrc: "/assets/images/services/2.jpeg",
         rating: 4.2,
         name: "David",
         servicesDone: 12,
@@ -65,7 +65,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/1.jpg",
+        imgSrc: "/assets/images/services/1.jpg",
         rating: 4.0,
         name: "Richflayer",
         servicesDone: 32,
@@ -74,7 +74,7 @@ const ExpertList = () => {
         profileLink: "service-experts-profile.html",
       },
       {
-        imgSrc: "././src/assets/images/services/2.jpeg",
+        imgSrc: "/assets/images/services/2.jpeg",
         rating: 4.2,
         name: "David",
         servicesDone: 12,

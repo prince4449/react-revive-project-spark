@@ -1,6 +1,6 @@
 export const reviews = [
   {
-    imgSrc: "./src/assets/images/services/1.jpg",
+    imgSrc: "/assets/images/services/1.jpg",
     reviewer: "Rn53",
     reviewLink: "service-experts-profile.html",
     reviewFor: "Robert Anthony",
@@ -8,7 +8,7 @@ export const reviews = [
     platform: "alibaba",
   },
   {
-    imgSrc: "./src/assets/images/services/2.jpg",
+    imgSrc: "/assets/images/services/2.jpg",
     reviewer: "John Doe",
     reviewLink: "service-experts-profile.html",
     reviewFor: "Jane Smith",
@@ -16,7 +16,7 @@ export const reviews = [
     platform: "ebay",
   },
   {
-    imgSrc: "./src/assets/images/services/3.jpg",
+    imgSrc: "/assets/images/services/3.jpg",
     reviewer: "Alice Brown",
     reviewLink: "service-experts-profile.html",
     reviewFor: "Chris Johnson",
@@ -24,7 +24,7 @@ export const reviews = [
     platform: "amazon",
   },
   {
-    imgSrc: "./src/assets/images/services/4.jpg",
+    imgSrc: "/assets/images/services/4.jpg",
     reviewer: "Sam Wilson",
     reviewLink: "service-experts-profile.html",
     reviewFor: "Luke White",
@@ -32,7 +32,7 @@ export const reviews = [
     platform: "etsy",
   },
   {
-    imgSrc: "./src/assets/images/services/5.jpg",
+    imgSrc: "/assets/images/services/5.jpg",
     reviewer: "Emily Davis",
     reviewLink: "service-experts-profile.html",
     reviewFor: "Sarah Green",
@@ -43,67 +43,67 @@ export const reviews = [
 
 export const services = [
   {
-    imgSrc: "./src/assets/images/services/1.jpg",
+    imgSrc: "/assets/images/services/1.jpg",
     title: "Plumbers",
     experts: 3,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/2.jpg",
+    imgSrc: "/assets/images/services/2.jpg",
     title: "LED Tv Services",
     experts: 2,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/3.jpeg",
+    imgSrc: "/assets/images/services/3.jpeg",
     title: "AC Services",
     experts: 3,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/4.jpeg",
+    imgSrc: "/assets/images/services/4.jpeg",
     title: "Electrical service",
     experts: 2,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/5.jpg",
+    imgSrc: "/assets/images/services/5.jpg",
     title: "Car service",
     experts: 2,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/6.jpg",
+    imgSrc: "/assets/images/services/6.jpg",
     title: "House Cleaning service",
     experts: 2,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/7.jpg",
+    imgSrc: "/assets/images/services/7.jpg",
     title: "Bike service",
     experts: 3,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/8.jpg",
+    imgSrc: "/assets/images/services/8.jpg",
     title: "Pest control service",
     experts: 1,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/9.jpg",
+    imgSrc: "/assets/images/services/9.jpg",
     title: "Home restoration services",
     experts: 0,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/10.jpg",
+    imgSrc: "/assets/images/services/10.jpg",
     title: "House Decoration Services",
     experts: 2,
     link: "all-experts.html",
   },
   {
-    imgSrc: "./src/assets/images/services/1.jpg",
+    imgSrc: "/assets/images/services/1.jpg",
     title: "Laptop service",
     experts: 3,
     link: "all-experts.html",
@@ -112,7 +112,7 @@ export const services = [
 
 export const Categoryservices = [
   {
-    image: "././src/assets/images/services/69336spa1.jpg",
+    image: "/assets/images/services/69336spa1.jpg",
     title: "Spa and Facial",
     count: 5,
     subcategories: [
@@ -146,13 +146,13 @@ export const Categoryservices = [
     ],
   },
   {
-    image: "././src/assets/images/services/48466ser4.jpg",
+    image: "/assets/images/services/48466ser4.jpg",
     title: "Wedding halls",
     count: 0,
     subcategories: [{ name: "Viki", link: "all-listing.html/viki", count: 0 }],
   },
   {
-    image: "././src/assets/images/services/63205tr1.jpg",
+    image: "/assets/images/services/63205tr1.jpg",
     title: "Automobiles",
     count: 5,
     subcategories: [

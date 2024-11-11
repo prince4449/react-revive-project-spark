@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { userRoutes } from "../routes/UserRoutes";
 
 const NarrowHeader = () => {
+    const navigate = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,11 +22,11 @@ const NarrowHeader = () => {
           <div className="row">
             <div className="hom-nav">
               {/* MOBILE MENU */}
-              <a href="index.html" className="top-log">
+              <a className="top-log" onClick={()=>{navigate(userRoutes.home)}}>
                 <img
-                  src="././src/assets/images/home/16077bizbook-white.png"
+                  src="/assets/images/home/16077bizbook-white.png"
                   style={{ width: 192, height: "auto" }}
-                  alt=""
+                  alt="Home"
                   loading="lazy"
                   className="ic-logo"
                 />
@@ -40,20 +44,20 @@ const NarrowHeader = () => {
                       <ul>
                         <li>
                           <a href="all-category.html" className="act">
-                            <img src="././src/assets/images/icon/shop.png" loading="lazy" />
+                            <img src="/assets/images/icon/shop.png" loading="lazy" />
                             All Services{" "}
                           </a>
                         </li>
                         <li>
                           <a href="service-experts/index.html" className="act">
-                            <img src="././src/assets/images/icon/expert.png" loading="lazy" />
+                            <img src="/assets/images/icon/expert.png" loading="lazy" />
                             Service Experts{" "}
                           </a>
                         </li>
                         <li>
                           <a href="jobs/index.html" className="act">
                             <img
-                              src="././src/assets/images/icon/employee.png"
+                              src="/assets/images/icon/employee.png"
                               loading="lazy"
                             />
                             Jobs{" "}
@@ -62,7 +66,7 @@ const NarrowHeader = () => {
                         <li>
                           <a href="places/index.html" className="act">
                             <img
-                              src="im././src/assets/ages/places/icons/hot-air-balloon.png"
+                              src="im/assets/ages/places/icons/hot-air-balloon.png"
                               loading="lazy"
                             />
                             Explore Travel{" "}
@@ -70,14 +74,14 @@ const NarrowHeader = () => {
                         </li>
                         <li>
                           <a href="news/index.html">
-                            <img src="././src/assets/images/icon/news.png" loading="lazy" />
+                            <img src="/assets/images/icon/news.png" loading="lazy" />
                             News &amp; Magazines{" "}
                           </a>
                         </li>
                         <li>
                           <a href="events.html">
                             <img
-                              src="././src/assets/images/icon/calendar.png"
+                              src="/assets/images/icon/calendar.png"
                               loading="lazy"
                             />
                             Events{" "}
@@ -85,25 +89,25 @@ const NarrowHeader = () => {
                         </li>
                         <li>
                           <a href="products.html">
-                            <img src="././src/assets/images/icon/cart.png" loading="lazy" />
+                            <img src="/assets/images/icon/cart.png" loading="lazy" />
                             Products{" "}
                           </a>
                         </li>
                         <li>
                           <a href="coupons.html">
-                            <img src="././src/assets/images/icon/coupons.png" loading="lazy" />
+                            <img src="/assets/images/icon/coupons.png" loading="lazy" />
                             Coupon &amp; deals{" "}
                           </a>
                         </li>
                         <li>
                           <a href="blog-posts.html">
-                            <img src="././src/assets/images/icon/blog1.png" loading="lazy" />
+                            <img src="/assets/images/icon/blog1.png" loading="lazy" />
                             Blogs{" "}
                           </a>
                         </li>
                         <li>
                           <a href="community.html">
-                            <img src="././src/assets/images/icon/11.png" loading="lazy" />
+                            <img src="/assets/images/icon/11.png" loading="lazy" />
                             Community{" "}
                           </a>
                         </li>

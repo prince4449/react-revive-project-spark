@@ -23,7 +23,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/60622ser6.jpg"
+                          src="/assets/images/services/60622ser6.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -43,7 +43,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/8253813.jpg"
+                          src="/assets/images/services/8253813.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -63,7 +63,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/930359.jpg"
+                          src="/assets/images/services/930359.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -83,7 +83,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/17259tr1.jpg"
+                          src="/assets/images/services/17259tr1.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -103,7 +103,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/909906.jpeg"
+                          src="/assets/images/services/909906.jpeg"
                           alt=""
                           loading="lazy"
                         />
@@ -123,7 +123,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/1792516.jpeg"
+                          src="/assets/images/services/1792516.jpeg"
                           alt=""
                           loading="lazy"
                         />
@@ -143,7 +143,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/451308.jpeg"
+                          src="/assets/images/services/451308.jpeg"
                           alt=""
                           loading="lazy"
                         />
@@ -163,7 +163,7 @@ const Services = () => {
                     <div className="land-pack-grid">
                       <div className="land-pack-grid-img">
                         <img
-                          src="./src/assets/images/services/5464514.jpeg"
+                          src="/assets/images/services/5464514.jpeg"
                           alt=""
                           loading="lazy"
                         />

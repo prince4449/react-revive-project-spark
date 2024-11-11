@@ -15,7 +15,7 @@ const AdSlider = () => {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img
-                      src="./src/assets/images/slider/90890557952.jpg"
+                      src="/assets/images/slider/90890557952.jpg"
                       alt="Los Angeles"
                       width={1100}
                       height={500}
@@ -24,7 +24,7 @@ const AdSlider = () => {
                   </div>
                   <div className="carousel-item ">
                     <img
-                      src="./src/assets/images/slider/27459517111.jpg"
+                      src="/assets/images/slider/27459517111.jpg"
                       alt="Los Angeles"
                       width={1100}
                       height={500}

@@ -11,7 +11,7 @@ const HeaderServices = () => {
           <li onClick={() => navigate(userRoutes.allCategory)}>
             <div>
               <img
-                src="./src/assets/images/icon/shop.png"
+                src="/assets/images/icon/shop.png"
                 alt="All Services"
                 loading="lazy"
               />
@@ -22,7 +22,7 @@ const HeaderServices = () => {
           <li onClick={() => navigate(userRoutes.serviceExpert)}>
             <div>
               <img
-                src="./src/assets/images/icon/expert.png"
+                src="/assets/images/icon/expert.png"
                 alt=""
                 loading="lazy"
               />
@@ -32,7 +32,7 @@ const HeaderServices = () => {
           <li onClick={() => navigate(userRoutes.jobs)}>
             <div>
               <img
-                src="./src/assets/images/icon/employee.png"
+                src="/assets/images/icon/employee.png"
                 alt=""
                 loading="lazy"
               />
@@ -42,7 +42,7 @@ const HeaderServices = () => {
           <li onClick={() => navigate(userRoutes.travels)}>
             <div>
               <img
-                src="./src/assets/images/places/icons/hot-air-balloon.png"
+                src="/assets/images/places/icons/hot-air-balloon.png"
                 alt=""
                 loading="lazy"
               />
@@ -52,7 +52,7 @@ const HeaderServices = () => {
           {/* <li>
             <div>
               <img
-                src="././src/assets/images/icon/news.png"
+                src="/assets/images/icon/news.png"
                 alt=""
                 loading="lazy"
               />
@@ -63,7 +63,7 @@ const HeaderServices = () => {
           <li>
             <div>
               <img
-                src="./src/assets/images/icon/calendar.png"
+                src="/assets/images/icon/calendar.png"
                 alt=""
                 loading="lazy"
               />
@@ -74,7 +74,7 @@ const HeaderServices = () => {
           <li onClick={() => navigate(userRoutes.products)}>
             <div>
               <img
-                src="././src/assets/images/icon/cart.png"
+                src="/assets/images/icon/cart.png"
                 alt=""
                 loading="lazy"
               />
@@ -84,7 +84,7 @@ const HeaderServices = () => {
           {/* <li>
             <div>
               <img
-                src="./src/assets/images/icon/coupons.png"
+                src="/assets/images/icon/coupons.png"
                 alt=""
                 loading="lazy"
               />
@@ -95,7 +95,7 @@ const HeaderServices = () => {
           <li>
             <div>
               <img
-                src="./src/assets/images/icon/blog1.png"
+                src="/assets/images/icon/blog1.png"
                 alt=""
                 loading="lazy"
               />

@@ -30,13 +30,13 @@ const ExpertPopUp = () => {
           <span>Get experts</span>
         </div>
         <div className="ani-q2">
-          <img src="././src/assets/images/quote.png" alt="" loading="lazy" />
+          <img src="/assets/images/quote.png" alt="" loading="lazy" />
         </div>
       </div>
 
       {/* START help button */}
       <span className="btn-ser-need-ani" onClick={toggleForm}>
-        <img src="././src/assets/images/icon/help.png" alt="" loading="lazy" />
+        <img src="/assets/images/icon/help.png" alt="" loading="lazy" />
       </span>
 
       {/* ANIMATION QUOTE FORM */}

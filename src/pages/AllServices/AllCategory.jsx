@@ -84,15 +84,25 @@ const AllCategory = () => {
                           <h4>
                             <a>{service?.name}</a>
                             <span>
+                              {" "}
                               {service?.cards_count.toString().padStart(2, "0")}
                             </span>
                           </h4>
                           <ol>
                             {service?.business_sub_categories.map(
                               (subcategory, subIndex) => (
-                                <li key={subIndex}>
+                                <li
+                                  key={subIndex}
+                                  onClick={(event) => {
+                                    event.stopPropagation();
+                                    navigate(
+                                      `${userRoutes.categoryList}?id=${service.id}&subCategory=${subcategory.id}`
+                                    );
+                                  }}
+                                >
                                   <a>
                                     {subcategory?.name}{" "}
+                                    {`(${subcategory.cards_count})`}
                                     <span>
                                       {/* {subcategory?.count
                                         .toString()
@@ -116,7 +126,7 @@ const AllCategory = () => {
       {/* END */}
       {/* START */}
       <span className="btn-ser-need-ani">
-        <img src="././src/assets/images/icon/help.png" alt="" loading="lazy" />
+        <img src="/assets/images/icon/help.png" alt="" loading="lazy" />
       </span>
       <ExpertPopUp />
       {/* END */}

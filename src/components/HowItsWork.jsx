@@ -24,7 +24,7 @@ const HowItsWork = () => {
                       <div>
                         <span>1</span>
                         <img
-                          src="././src/assets/images/icon/how1.png"
+                          src="/assets/images/icon/how1.png"
                           alt=""
                           loading="lazy"
                         />
@@ -39,7 +39,7 @@ const HowItsWork = () => {
                       <div>
                         <span>2</span>
                         <img
-                          src="././src/assets/images/icon/how2.png"
+                          src="/assets/images/icon/how2.png"
                           alt=""
                           loading="lazy"
                         />
@@ -54,7 +54,7 @@ const HowItsWork = () => {
                       <div>
                         <span>3</span>
                         <img
-                          src="././src/assets/images/icon/how3.png"
+                          src="/assets/images/icon/how3.png"
                           alt=""
                           loading="lazy"
                         />
@@ -69,7 +69,7 @@ const HowItsWork = () => {
                       <div>
                         <span>4</span>
                         <img
-                          src="././src/assets/images/icon/how4.png"
+                          src="/assets/images/icon/how4.png"
                           alt=""
                           loading="lazy"
                         />
@@ -86,7 +86,7 @@ const HowItsWork = () => {
               <div className="mob-app">
                 <div className="lhs">
                   <img
-                    src="././src/assets/images/mobile.png"
+                    src="/assets/images/mobile.png"
                     alt=""
                     loading="lazy"
                   />
@@ -108,14 +108,14 @@ const HowItsWork = () => {
                   </span>
                   <a href="#">
                     <img
-                      src="././src/assets/images/gstore.png"
+                      src="/assets/images/gstore.png"
                       alt=""
                       loading="lazy"
                     />{" "}
                   </a>
                   <a href="#">
                     <img
-                      src="././src/assets/images/astore.png"
+                      src="/assets/images/astore.png"
                       alt=""
                       loading="lazy"
                     />{" "}

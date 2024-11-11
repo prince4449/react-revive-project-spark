@@ -17,7 +17,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="./src/assets/images/home2-hand.jpg"
+                          src="/assets/images/home2-hand.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -35,7 +35,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="./src/assets/images/products/start-selling.jpg"
+                          src="/assets/images/products/start-selling.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -53,7 +53,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="./src/assets/images/coupon-deals.jpg"
+                          src="/assets/images/coupon-deals.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -71,7 +71,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="././src/assets/images/places/3.jpg"
+                          src="/assets/images/places/3.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -89,7 +89,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="././src/assets/images/experts/expert1.jpg"
+                          src="/assets/images/experts/expert1.jpg"
                           alt=""
                           loading="lazy"
                         />
@@ -107,7 +107,7 @@ const MoreServices = () => {
                     <div className="plac-hom-box">
                       <div className="plac-hom-box-im">
                         <img
-                          src="././src/assets/images/news.jpg"
+                          src="/assets/images/news.jpg"
                           alt=""
                           loading="lazy"
                         />

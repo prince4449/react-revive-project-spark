@@ -5,37 +5,37 @@ const TravelPlaces = () => {
     {
       name: "Eiffel Tower",
       type: "Historical places",
-      imgSrc: "././src/assets/images/places/1.jpg",
+      imgSrc: "/assets/images/places/1.jpg",
       link: "details.html",
     },
     {
       name: "Taj Mahal, India",
       type: "Historical places",
-      imgSrc: "././src/assets/images/places/2.jpg",
+      imgSrc: "/assets/images/places/2.jpg",
       link: "details.html",
     },
     {
       name: "Bondi Beach, Sydney",
       type: "Beach",
-      imgSrc: "././src/assets/images/places/3.jpg",
+      imgSrc: "/assets/images/places/3.jpg",
       link: "details.html",
     },
     {
       name: "Sydney Opera House",
       type: "Beach",
-      imgSrc: "././src/assets/images/places/4.jpg",
+      imgSrc: "/assets/images/places/4.jpg",
       link: "details.html",
     },
     {
       name: "Goa Beach",
       type: "Beach",
-      imgSrc: "././src/assets/images/places/5.jpg",
+      imgSrc: "/assets/images/places/5.jpg",
       link: "details.html",
     },
     {
       name: "Niagara Falls, North America",
       type: "Waterfalls",
-      imgSrc: "././src/assets/images/places/6.jpg",
+      imgSrc: "/assets/images/places/6.jpg",
       link: "details.html",
     },
   ];

@@ -127,7 +127,8 @@ const CategoryListing = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get("id");
-    fetchAllBusinessCard(id, "", "");
+    const subCategory = searchParams.get("subCategory");
+    fetchAllBusinessCard(id, subCategory, "");
   }, []);
 
   return (
@@ -155,14 +156,22 @@ const CategoryListing = () => {
               <div className="row">
                 <h1>Spa and Facial</h1>
                 <ul>
-                  <li>
-                    <a href="index.html">Home</a>
+                  <li
+                    onClick={() => {
+                      navigate(userRoutes.home);
+                    }}
+                  >
+                    <a href="#">Home</a>
+                  </li>
+                  <li
+                    onClick={() => {
+                      navigate(userRoutes.allCategory);
+                    }}
+                  >
+                    <a href="#">All Category</a>
                   </li>
                   <li>
-                    <a href="all-listing.html">All Category</a>
-                  </li>
-                  <li>
-                    <a href="listing-details.html">Spa and Facial</a>
+                    <a href="#">Spa and Facial</a>
                   </li>
                 </ul>
               </div>
@@ -200,7 +209,7 @@ const CategoryListing = () => {
                             <div className="ne-3">
                               <span>5.0</span>
                             </div>
-                            <a href="listing-details.html" />
+                            <a href="#" />
                           </div>
                         </li>
                         <li>
@@ -221,7 +230,7 @@ const CategoryListing = () => {
                             <div className="ne-3">
                               <span>5.0</span>
                             </div>
-                            <a href="listing-details.html" />
+                            <a href="#" />
                           </div>
                         </li>
                         <li>
@@ -242,7 +251,7 @@ const CategoryListing = () => {
                             <div className="ne-3">
                               <span>5.0</span>
                             </div>
-                            <a href="listing-details.html" />
+                            <a href="#" />
                           </div>
                         </li>
                         <li>
@@ -263,7 +272,7 @@ const CategoryListing = () => {
                             <div className="ne-3">
                               <span>5.0</span>
                             </div>
-                            <a href="listing-details.html" />
+                            <a href="#" />
                           </div>
                         </li>
                         <li>
@@ -284,7 +293,7 @@ const CategoryListing = () => {
                             <div className="ne-3">
                               <span>5.0</span>
                             </div>
-                            <a href="listing-details.html" />
+                            <a href="#" />
                           </div>
                         </li>
                       </ul>

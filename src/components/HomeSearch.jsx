@@ -176,7 +176,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/listing.png"
+                    src="/assets/images/icon/listing.png"
                     alt=""
                     loading="lazy"
                   />
@@ -189,7 +189,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/expert.png"
+                    src="/assets/images/icon/expert.png"
                     alt=""
                     loading="lazy"
                   />
@@ -202,7 +202,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/employee.png"
+                    src="/assets/images/icon/employee.png"
                     alt=""
                     loading="lazy"
                   />
@@ -215,7 +215,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/shop.png"
+                    src="/assets/images/icon/shop.png"
                     alt=""
                     loading="lazy"
                   />
@@ -228,7 +228,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/event.png"
+                    src="/assets/images/icon/event.png"
                     alt=""
                     loading="lazy"
                   />
@@ -241,7 +241,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/coupons.png"
+                    src="/assets/images/icon/coupons.png"
                     alt=""
                     loading="lazy"
                   />
@@ -254,7 +254,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="././src/assets/images/icon/blog.png"
+                    src="/assets/images/icon/blog.png"
                     alt=""
                     loading="lazy"
                   />
@@ -267,7 +267,7 @@ const HomeSearch = () => {
               <li>
                 <div>
                   <img
-                    src="./src/assets/images/icon/general.png"
+                    src="/assets/images/icon/general.png"
                     alt=""
                     loading="lazy"
                   />

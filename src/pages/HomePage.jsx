@@ -19,7 +19,7 @@ const HomePage = () => {
           <div
             className="hom-head"
             style={{
-              backgroundImage: "url('./src/assets/images/3261288129ex2.jpg')",
+              backgroundImage: "url('/assets/images/3261288129ex2.jpg')",
             }}
           >
             <NarrowHeader />
@@ -50,7 +50,7 @@ const HomePage = () => {
                   <a href="https://themeforest.net/item/holiday-hotel-and-tour-ticket-booking-online-html5-responsive-template/19411137">
                     <span>Ad</span>
                     <img
-                      src="./src/assets/images/ads/732314414ads2.png"
+                      src="/assets/images/ads/732314414ads2.png"
                       alt=""
                       loading="lazy"
                     />

@@ -179,7 +179,7 @@ const Footer = () => {
                 <li>
                   <a href="">
                     <img
-                      src="././src/assets/images/gstore.png"
+                      src="/assets/images/gstore.png"
                       alt=""
                       loading="lazy"
                     />
@@ -188,7 +188,7 @@ const Footer = () => {
                 <li>
                   <a href="">
                     <img
-                      src="././src/assets/images/astore.png"
+                      src="/assets/images/astore.png"
                       alt=""
                       loading="lazy"
                     />
@@ -202,7 +202,7 @@ const Footer = () => {
                 <li>
                   <a target="_blank" href="">
                     <img
-                      src="././src/assets/images/social/1.png"
+                      src="/assets/images/social/1.png"
                       alt=""
                       loading="lazy"
                     />
@@ -214,7 +214,7 @@ const Footer = () => {
                     href="https://twitter.com/Google?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
                   >
                     <img
-                      src="././src/assets/images/social/2.png"
+                      src="/assets/images/social/2.png"
                       alt=""
                       loading="lazy"
                     />
@@ -226,7 +226,7 @@ const Footer = () => {
                     href="https://www.facebook.com/Rn53themes-1956793534579530/"
                   >
                     <img
-                      src="././src/assets/images/social/3.png"
+                      src="/assets/images/social/3.png"
                       alt=""
                       loading="lazy"
                     />
@@ -235,7 +235,7 @@ const Footer = () => {
                 <li>
                   <a target="_blank" href="">
                     <img
-                      src="././src/assets/images/social/4.png"
+                      src="/assets/images/social/4.png"
                       alt=""
                       loading="lazy"
                     />
@@ -244,7 +244,7 @@ const Footer = () => {
                 <li>
                   <a target="_blank" href="">
                     <img
-                      src="././src/assets/images/social/5.png"
+                      src="/assets/images/social/5.png"
                       alt=""
                       loading="lazy"
                     />
@@ -319,67 +319,67 @@ const Footer = () => {
         <ul>
           <li>
             <a href="index.html">
-              <img src="././src/assets/images/icon/home.png" />
+              <img src="/assets/images/icon/home.png" />
               Home
             </a>
           </li>
           <li>
             <span className="mob-sear">
-              <img src="././src/assets/images/icon/search1.png" />
+              <img src="/assets/images/icon/search1.png" />
               Search
             </span>
           </li>
           <li>
             <a href="all-category.html" className="act">
-              <img src="././src/assets/images/icon/shop.png" />
+              <img src="/assets/images/icon/shop.png" />
               Services
             </a>
           </li>
           <li>
             <a href="service-experts/index.html">
-              <img src="././src/assets/images/icon/expert.png" />
+              <img src="/assets/images/icon/expert.png" />
               Service Experts
             </a>
           </li>
           <li>
             <a href="jobs/index.html">
-              <img src="././src/assets/jobs/images/icon/employee.png" />
+              <img src="/assets/jobs/images/icon/employee.png" />
               Jobs
             </a>
           </li>
           <li>
             <a href="events.html">
-              <img src="././src/assets/images/icon/calendar.png" />
+              <img src="/assets/images/icon/calendar.png" />
               Events
             </a>
           </li>
           <li>
             <a href="products.html">
-              <img src="././src/assets/images/icon/cart.png" />
+              <img src="/assets/images/icon/cart.png" />
               Products
             </a>
           </li>
           <li>
             <a href="coupons.html">
-              <img src="././src/assets/images/icon/coupons.png" />
+              <img src="/assets/images/icon/coupons.png" />
               Coupons
             </a>
           </li>
           <li>
             <a href="blog-posts.html">
-              <img src="././src/assets/images/icon/blog1.png" />
+              <img src="/assets/images/icon/blog1.png" />
               Blogs
             </a>
           </li>
           <li>
             <a href="community.html">
-              <img src="././src/assets/images/icon/11.png" />
+              <img src="/assets/images/icon/11.png" />
               Community
             </a>
           </li>
           <li>
             <span className="btn-ser-need-ani">
-              <img src="././src/assets/images/icon/how1.png" />
+              <img src="/assets/images/icon/how1.png" />
               Support
             </span>
           </li>

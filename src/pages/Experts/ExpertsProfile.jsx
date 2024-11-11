@@ -45,11 +45,11 @@ const ExpertsProfile = () => {
                     <span>
                       Status: <b>Busy</b>
                     </span>
-                    <img src="././src/assets/images/services/1.jpg" alt="" loading="lazy" />
+                    <img src="/assets/images/services/1.jpg" alt="" loading="lazy" />
                   </div>
                   <div className="jpro-ban-tit">
                     <div className="s1">
-                      <img src="././src/assets/images/services/3.jpg" alt="" loading="lazy" />
+                      <img src="/assets/images/services/3.jpg" alt="" loading="lazy" />
                     </div>
                     <div className="s2">
                       <h1>Rn53</h1>
@@ -140,7 +140,7 @@ const ExpertsProfile = () => {
                         <li>
                           <div className="lr-user-wr-img">
                             <img
-                              src="././src/assets/images/services/2.jpeg"
+                              src="/assets/images/services/2.jpeg"
                               alt=""
                               loading="lazy"
                             />
@@ -161,7 +161,7 @@ const ExpertsProfile = () => {
                         <li>
                           <div className="lr-user-wr-img">
                             <img
-                              src="././src/assets/images/services/3.jpg"
+                              src="/assets/images/services/3.jpg"
                               alt=""
                               loading="lazy"
                             />
@@ -184,7 +184,7 @@ const ExpertsProfile = () => {
                         <li>
                           <div className="lr-user-wr-img">
                             <img
-                              src="././src/assets/images/services/5.jpeg"
+                              src="/assets/images/services/5.jpeg"
                               alt=""
                               loading="lazy"
                             />
@@ -225,7 +225,7 @@ const ExpertsProfile = () => {
                       <li>
                         <div className="hot-page2-hom-pre-1">
                           <img
-                            src="././src/assets/images/services/6.jpeg"
+                            src="/assets/images/services/6.jpeg"
                             alt=""
                             loading="lazy"
                           />
@@ -247,7 +247,7 @@ const ExpertsProfile = () => {
                       <li>
                         <div className="hot-page2-hom-pre-1">
                           <img
-                            src="././src/assets/images/services/6.jpeg"
+                            src="/assets/images/services/6.jpeg"
                             alt=""
                             loading="lazy"
                           />
@@ -275,7 +275,7 @@ const ExpertsProfile = () => {
                       <li>
                         <div className="hot-page2-hom-pre-1">
                           <img
-                            src="././src/assets/images/services/8.jpg"
+                            src="/assets/images/services/8.jpg"
                             alt=""
                             loading="lazy"
                           />
@@ -294,7 +294,7 @@ const ExpertsProfile = () => {
                       <li>
                         <div className="hot-page2-hom-pre-1">
                           <img
-                            src="././src/assets/images/services/7.jpeg"
+                            src="/assets/images/services/7.jpeg"
                             alt=""
                             loading="lazy"
                           />
@@ -313,7 +313,7 @@ const ExpertsProfile = () => {
                       <li>
                         <div className="hot-page2-hom-pre-1">
                           <img
-                            src="././src/assets/images/services/5.jpeg"
+                            src="/assets/images/services/5.jpeg"
                             alt=""
                             loading="lazy"
                           />
