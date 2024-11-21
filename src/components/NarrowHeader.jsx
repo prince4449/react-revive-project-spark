@@ -47,7 +47,7 @@ const NarrowHeader = () => {
                 }}
               >
                 <img
-                  src="/assets/images/home/16077bizbook-white.png"
+                  src="/assets/images/179083357bizbook-white.png"
                   style={{ width: 192, height: "auto" }}
                   alt="Home"
                   loading="lazy"
@@ -131,7 +131,7 @@ const NarrowHeader = () => {
                             }}
                           >
                             <a>
-                              {service?.name} {" "}
+                              {service?.name}{" "}
                               <span>
                                 {service?.cards_count
                                   .toString()

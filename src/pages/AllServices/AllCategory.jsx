@@ -75,7 +75,7 @@ const AllCategory = () => {
                       <div className="sh-all-scat-box">
                         <div className="lhs">
                           <img
-                            src={service?.image}
+                            src={service?.logo_url}
                             alt={service?.name}
                             loading="lazy"
                           />

@@ -819,11 +819,15 @@ const CategoryListing = () => {
                           {/* LISTING IMAGE */}
                           <div className="al-img">
                             <span className="open-stat">
-                              {listing.isOpen ? "Open" : "Closed"}
+                              {!listing.isOpen ? "Open" : "Closed"}
                             </span>
                             <a>
                               <img
-                                src={listing.image}
+                                src={
+                                  listing.documents.filter(
+                                    (doc) => doc.document_type === "Logo"
+                                  )[0]?.file_url || ""
+                                }
                                 loading="lazy"
                                 alt={listing.name}
                               />
