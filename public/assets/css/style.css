@@ -3753,6 +3753,69 @@ div#review_success {
     width: 100%;
     border: 1px solid #e9eaec;
 }
+.sh-all-scat-box {
+      height: 180px;
+    display: flex;
+    align-items: center; /* Align items (image and subcategories) vertically */
+    justify-content: space-between; /* Space between image and content */
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0px 0px 20px 4px rgb(0 0 0 / 4%);
+    margin-bottom: 15px;
+    text-align: left; /* Ensure content alignment */
+    width: 100%;
+    border: 1px solid #e9eaec;
+    padding: 10px;
+}
+
+.sh-all-scat-box .lhs {
+    flex: 0 0 150px; /* Fix width for the image section */
+    max-width: 150px;
+    height: 110px; /* Ensure consistent height */
+    margin-right: 15px; /* Space between image and content */
+}
+
+.sh-all-scat-box .lhs img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+    border-radius: 20px;
+}
+
+.sh-all-scat-box .rhs {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Even spacing for content */
+    padding: 10px;
+}
+
+.sh-all-scat-box .rhs h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px; /* Space between title and subcategories */
+}
+
+.sh-all-scat-box .rhs ol {
+    display: flex;
+    flex-wrap: wrap; /* Wrap subcategories to the next line if needed */
+    gap: 5px; /* Space between subcategories */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sh-all-scat-box .rhs ol li {
+    flex: 0 0 auto; /* Ensure subcategories stay inline */
+}
+
+
+
+
+
+
+
 
 .sh-all-scat-box .lhs {
     float: left;

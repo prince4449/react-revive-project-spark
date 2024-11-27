@@ -89,8 +89,9 @@ const AllCategory = () => {
                             </span>
                           </h4>
                           <ol>
-                            {service?.business_sub_categories.map(
-                              (subcategory, subIndex) => (
+                            {service?.business_sub_categories
+                              .slice(0, 3)
+                              .map((subcategory, subIndex) => (
                                 <li
                                   key={subIndex}
                                   onClick={(event) => {
@@ -103,14 +104,21 @@ const AllCategory = () => {
                                   <a>
                                     {subcategory?.name}{" "}
                                     {`(${subcategory.cards_count})`}
-                                    <span>
-                                      {/* {subcategory?.count
-                                        .toString()
-                                        .padStart(2, "0") || 20} */}
-                                    </span>
                                   </a>
                                 </li>
-                              )
+                              ))}
+
+                            {service?.business_sub_categories.length > 3 && (
+                              <li
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  navigate(
+                                    `${userRoutes.categoryList}?id=${service.id}`
+                                  );
+                                }}
+                              >
+                                <a>View All</a>
+                              </li>
                             )}
                           </ol>
                         </div>
