@@ -2325,7 +2325,7 @@ div#review_success {
 
 .ban-search li select,
 .ban-search li .chosen-container {
-    height: 60px;
+    height: 58px;
     border: 0px;
 }
 
@@ -25352,6 +25352,7 @@ a[data-command='p'] {
         width: 50%;
     }
 
+
     .ban-search.ban-sear-all li.sr-cate select {
         border-radius: 10px 0 0 10px;
     }
@@ -28194,4 +28195,38 @@ a[data-command='p'] {
     background: url(chosen-sprite.png) no-repeat -28px -20px, #fff;
     direction: rtl;
     padding: 4px 5px 4px 20px
+}
+/* Common styling for all select dropdowns with icons */
+.ban-search ul li select {
+  position: relative; /* For positioning the icons */
+  padding-left: 35px; /* Space for the icon */
+}
+
+/* Icon positioning for all select dropdowns */
+.ban-search ul li select:before {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Space from the left edge */
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent interaction with the icon */
+  font-family: 'Material Icons', sans-serif;
+  font-size: 16px; /* Adjust size */
+  color: #666; /* Icon color */
+}
+
+/* Icon content specific to each select dropdown */
+.ban-search ul li.sr-cate select:before {
+  content: 'layers'; /* Icon for the category select */
+}
+
+.ban-search ul li.sr-cit select:before {
+  content: 'location_on'; /* Icon for the city select */
+}
+
+.ban-search ul li.sr-nor select:before {
+  content: 'search'; /* Icon for the expert search select */
+}
+
+.ban-search ul li.sr-sea select:before {
+  content: 'search'; /* Icon for the search input field */
 }

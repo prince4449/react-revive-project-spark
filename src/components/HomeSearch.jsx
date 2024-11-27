@@ -28,7 +28,7 @@ const HomeSearch = () => {
                     data-placeholder="Select Services"
                     className="chosen-select"
                   >
-                    {/*<option value="">Select Services</option>*/}
+                    <option value="">Select Services</option>
                     <option value={1}>All Services</option>
                     <option value={2}>Service Experts</option>
                     <option value={3}>Jobs</option>
@@ -47,6 +47,7 @@ const HomeSearch = () => {
                     data-placeholder="Select City"
                     className="chosen-select"
                   >
+                    <option value={""}>Select City</option>
                     <option value={48025}>Los Angeles</option>
                     <option value={48026}>Chicago</option>
                     <option value={48027}>Houston</option>
